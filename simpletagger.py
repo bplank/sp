@@ -179,22 +179,24 @@ class StructuredPerceptron(object):
                     'SUFFIX+2TAGS_%s_%s_%s' % (suffix, previous_tag, tag),
                     'PREFIX+2TAGS_%s_%s_%s' % (prefix, previous_tag, tag)
         ]
-
+        print(word, self.shape(word))
         return features
 
     @memoize
-    def shape(self, x):
+    def shape(self, word):
+        """
+        some simple shape features
+        """
         result = []
-        for c in x:
+        for c in word:
             if c.isupper():
                 result.append('X')
             elif c.islower():
                 result.append('x')
             elif c in '0123456789':
                 result.append('d')
-        else:
-            result.append(c)
-
+            else:
+                result.append(c)
         # replace multiple occurrences of a character with 'x*' and return it
         return re.sub(r"x+", "x*", ''.join(result))
 
