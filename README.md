@@ -1,1 +1,3 @@
-# sp
+# SP: Simple Structured Perceptron tagger in Python
+
+
