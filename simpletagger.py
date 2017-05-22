@@ -179,7 +179,6 @@ class StructuredPerceptron(object):
                     'SUFFIX+2TAGS_%s_%s_%s' % (suffix, previous_tag, tag),
                     'PREFIX+2TAGS_%s_%s_%s' % (prefix, previous_tag, tag)
         ]
-        print(word, self.shape(word))
         return features
 
     @memoize
