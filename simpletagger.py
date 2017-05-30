@@ -79,7 +79,7 @@ class StructuredPerceptron(object):
 
         self.START = "__START__"
         self.END = "__END__"
-        print("using seed: {}".format(seed))
+        print("using seed: {}".format(seed), file=sys.stderr)
         random.seed(seed)
         np.random.seed(seed)
         
